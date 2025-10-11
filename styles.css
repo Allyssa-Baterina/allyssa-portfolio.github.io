@@ -55,12 +55,20 @@ a {
 .typing {
   font-size: 0.95rem;
   color: gray;
-  white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid gray;
   width: 0;
-  animation: typing 10s steps(250, end) infinite,
-    blink-caret step-end infinite;
+  display: inline-block;
+  white-space: nowrap;
+  animation: typing 10s steps(250, end) infinite, blink-caret step-end infinite;
+}
+
+@media (max-width: 480px) {
+  .typing {
+    white-space: normal;
+    width: auto;
+    animation: none;
+  }
 }
 
 @keyframes typing {
@@ -169,8 +177,8 @@ h3 {
   font-weight: 700;
 }
 .btn:hover {
-  background: #0ea5e9; 
-  transform: translateY(-3px); 
+  background: #0ea5e9;
+  transform: translateY(-3px);
   cursor: pointer;
 }
 .btn-row {
