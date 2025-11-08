@@ -1,5 +1,5 @@
-/* Import Inter font for consistent typography across all devices */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/* Import a clean, high-contrast font for dark backgrounds */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 /* ========== CSS RESET ========== */
 * {
@@ -8,27 +8,15 @@
   box-sizing: border-box;
 }
 
-/* ========== COLOR VARIABLES ========== */
+/* ========== COLOR VARIABLES (Dark Mode Forced) ========== */
 :root {
   --bg: #0b0c10;
   --card: #11131a;
-  --muted: #8b93a7;
-  --text: #e9ecf1;
+  --muted: #9da3b0;
+  --text: #f5f7fa;
   --brand: #3b82f6;
   --chip: #1b2030;
   --border: #1f2330;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #f7f8fb;
-    --card: #ffffff;
-    --muted: #5a6275;
-    --text: #0e1116;
-    --brand: #2563eb;
-    --chip: #eef2ff;
-    --border: #e6e8ef;
-  }
 }
 
 /* ========== GLOBAL STYLES ========== */
@@ -38,11 +26,12 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   letter-spacing: 0.01em;
+  color-scheme: dark; /* Forces dark mode in browsers */
 }
 
 body {
   height: 100%;
-  font-family: 'Inter', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -76,9 +65,9 @@ a {
 /* ========== TYPING EFFECT ========== */
 .typing {
   font-size: 0.95rem;
-  color: gray;
+  color: var(--muted);
   overflow: hidden;
-  border-right: 2px solid gray;
+  border-right: 2px solid var(--muted);
   width: 0;
   display: inline-block;
   white-space: nowrap;
@@ -107,7 +96,7 @@ a {
     border-color: transparent;
   }
   50% {
-    border-color: gray;
+    border-color: var(--muted);
   }
 }
 
